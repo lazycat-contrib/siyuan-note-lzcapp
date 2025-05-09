@@ -1,0 +1,25 @@
+lzc-sdk-version: "0.1"
+name: 思源笔记
+package: lazycat.community.app.siyuan-note
+version: 3.1.28
+description: " 一款本地优先的个人知识管理系统， 支持细粒度块级引用和 Markdown 所见即所得。"
+homepage: https://github.com/siyuan-note/siyuan
+author: siyuan-note
+application:
+  subdomain: siyuan-note
+  background_task: true
+  public_path:
+    - /
+  routes:
+    - /=http://siyuan-note-server:6806/
+services:
+  siyuan-note-server:
+    image: docker.1ms.run/b3log/siyuan:v3.1.28
+    environment:
+      - LANG=zh_CN.UTF-8
+      - TZ=Asia/Shanghai
+      - PUID=1001
+      - PGID=1002
+    command: --workspace=/siyuan/workspace/ --accessAuthCode=${AuthCode}
+    binds:
+      - /lzcapp/var/data:/siyuan/workspace
