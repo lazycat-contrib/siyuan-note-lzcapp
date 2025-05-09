@@ -2,8 +2,8 @@ lzc-sdk-version: "0.1"
 name: 思源笔记
 package: lazycat.community.app.siyuan-note
 version: 3.1.28
-description: " 一款本地优先的个人知识管理系统， 支持细粒度块级引用和 Markdown 所见即所得。"
-homepage: https://github.com/siyuan-note/siyuan
+description: "基于 GPL 协议，针对 siyuan-note 的修改版。去除了需要思源账号才能使用S3同步的限制的版本。"
+homepage: https://github.com/appdev/siyuan-unlock
 author: siyuan-note
 application:
   subdomain: siyuan-note
@@ -14,13 +14,13 @@ application:
     - /=http://siyuan-note-server:6806/
 services:
   siyuan-note-server:
-    image: docker.1ms.run/b3log/siyuan:v3.1.28
+    image: docker.1ms.run/czyt/siyuan-unlock:v3.1.28
     environment:
       - LANG=zh_CN.UTF-8
       - TZ=Asia/Shanghai
       - PUID=1001
       - PGID=1002
     entrypoint: /lzcapp/pkg/content/entrypoint.sh
-    
+
     binds:
       - /lzcapp/var/data:/siyuan/workspace
