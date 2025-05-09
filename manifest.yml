@@ -20,6 +20,7 @@ services:
       - TZ=Asia/Shanghai
       - PUID=1001
       - PGID=1002
-    command: --workspace=/siyuan/workspace/ --accessAuthCode=${AuthCode}
+    entrypoint: /lzcapp/pkg/content/entrypoint.sh
+    
     binds:
       - /lzcapp/var/data:/siyuan/workspace
