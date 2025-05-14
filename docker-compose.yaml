@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  main:
+    image: b3log/siyuan
+    command: ['--workspace=/siyuan/workspace/', '--accessAuthCode=${AuthCode}']
+    ports:
+      - 6806:6806
+    volumes:
+      - /siyuan/workspace:/siyuan/workspace
+    restart: unless-stopped
+    environment:
+      # A list of time zone identifiers can be found at https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+      - TZ=Asia/Shanghai
+      - SIYUAN_ACCESS_AUTH_CODE="lazycat"
+      - PUID=1001
+      - PGID=1002
