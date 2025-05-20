@@ -14,7 +14,7 @@ application:
     - /=http://siyuan-note-server:6806/
 services:
   siyuan-note-server:
-    image: docker.1ms.run/czyt/siyuan:v3.1.29
+    image: docker.1ms.run/czyt/siyuan:v3.1.30
     environment:
       - LANG=zh_CN.UTF-8
       - TZ=Asia/Shanghai
