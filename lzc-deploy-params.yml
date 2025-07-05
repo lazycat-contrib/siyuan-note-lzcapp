@@ -1,0 +1,11 @@
+params:
+  - id: siyuan_access_auth_code
+    type: string
+    name: "siyuan note auth code"
+    description: "the siyuan note auth code you want to set"
+
+locales:
+  zh:
+    siyuan_access_auth_code:
+      name: "📒思源笔记授权码"
+      description: "设置该选项后可以通过该授权码登录思源笔记软件"
