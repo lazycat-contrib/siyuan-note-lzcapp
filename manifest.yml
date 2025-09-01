@@ -14,7 +14,7 @@ application:
 
     upstreams:
         - location: /
-          backend: siyuan-note-server:6806/
+          backend: http://siyuan-note-server:6806/
 
 services:
     siyuan-note-server:
