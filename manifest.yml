@@ -2,29 +2,29 @@ lzc-sdk-version: "0.1"
 min_os_version: 1.3.8
 name: 思源笔记
 package: lazycat.community.app.siyuan-note
-version: 3.3.0
+version: 3.3.2
 description: "基于 GPL 协议，针对 siyuan-note 的修改版。去除了需要思源账号才能使用S3同步的限制的版本。"
 homepage: https://github.com/dockers-x/siyuan
 author: czyt
 application:
-    subdomain: siyuan-note
-    background_task: true
-    public_path:
-        - /
+  subdomain: siyuan-note
+  background_task: true
+  public_path:
+    - /
 
-    upstreams:
-        - location: /
-          backend: http://siyuan-note-server:6806/
+  upstreams:
+    - location: /
+      backend: http://siyuan-note-server:6806/
 
 services:
-    siyuan-note-server:
-        image: docker.1ms.run/czyt/siyuan:v3.3.0
-        environment:
-            - LANG=zh_CN.UTF-8
-            - TZ={{.U.siyuan_server_time_zone}}
-            - PUID=1001
-            - PGID=1002
-            - SIYUAN_ACCESS_AUTH_CODE={{.U.siyuan_access_auth_code}}
+  siyuan-note-server:
+    image: docker.1ms.run/czyt/siyuan:v3.3.2
+    environment:
+      - LANG=zh_CN.UTF-8
+      - TZ={{.U.siyuan_server_time_zone}}
+      - PUID=1001
+      - PGID=1002
+      - SIYUAN_ACCESS_AUTH_CODE={{.U.siyuan_access_auth_code}}
 
-        binds:
-            - /lzcapp/var/data:/siyuan/workspace
+    binds:
+      - /lzcapp/var/data:/siyuan/workspace
