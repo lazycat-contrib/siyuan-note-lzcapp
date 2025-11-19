@@ -2,7 +2,7 @@ lzc-sdk-version: "0.1"
 min_os_version: 1.3.8
 name: 思源笔记
 package: lazycat.community.app.siyuan-note
-version: 3.3.6
+version: 3.4.0
 description: "基于 GPL 协议，针对 siyuan-note 的修改版。去除了需要思源账号才能使用S3同步的限制的版本。"
 homepage: https://github.com/dockers-x/siyuan
 author: czyt
@@ -18,7 +18,7 @@ application:
 
 services:
   siyuan-note-server:
-    image: docker.1ms.run/czyt/siyuan:v3.3.6
+    image: docker.1ms.run/czyt/siyuan:v3.4.0
     environment:
       - LANG=zh_CN.UTF-8
       - TZ={{.U.siyuan_server_time_zone}}
