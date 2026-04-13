@@ -1,5 +1,5 @@
 application:
-  subdomain: siyuan-note
+  subdomain: siyuan
   background_task: true
   public_path:
     - /
