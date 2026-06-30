@@ -17,6 +17,7 @@ services:
       - PUID=1001
       - PGID=1002
       - SIYUAN_ACCESS_AUTH_CODE={{.U.siyuan_access_auth_code}}
+    command: serve
 
     binds:
       - /lzcapp/var/data:/siyuan/workspace
