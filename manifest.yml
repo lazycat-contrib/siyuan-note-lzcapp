@@ -10,7 +10,7 @@ application:
 
 services:
   siyuan-note-server:
-    image: docker.1ms.run/czyt/siyuan:v3.7.0
+    image: dockerproxy.net/czyt/siyuan:v3.7.0
     environment:
       - LANG=zh_CN.UTF-8
       - TZ={{.U.siyuan_server_time_zone}}
