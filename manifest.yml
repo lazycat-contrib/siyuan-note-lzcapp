@@ -3,14 +3,13 @@ application:
   background_task: true
   public_path:
     - /
-
   upstreams:
     - location: /
       backend: http://siyuan-note-server:6806/
-
 services:
   siyuan-note-server:
-    image: dockerproxy.net/czyt/siyuan:v3.7.0
+    # upstream: czyt/siyuan:v3.7.1
+    image: czyt/siyuan:v3.7.1
     environment:
       - LANG=zh_CN.UTF-8
       - TZ={{.U.siyuan_server_time_zone}}
@@ -18,6 +17,5 @@ services:
       - PGID=1002
       - SIYUAN_ACCESS_AUTH_CODE={{.U.siyuan_access_auth_code}}
     command: serve
-
     binds:
       - /lzcapp/var/data:/siyuan/workspace
