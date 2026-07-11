@@ -1,0 +1,36 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: dist/siyuan-note.lpk
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: siyuan-note
+
+build:
+  run_buildscript: false
+
+images:
+  - id: siyuan-note
+    target: service
+    service: siyuan-note-server
+    source: czyt/siyuan
+    channel: stable
+    tag_regex: '^v?[0-9]+\.[0-9]+\.[0-9]+$'
+    delivery:
+      mode: direct
+
+stores:
+  official:
+    enabled: false
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: 思源笔记
+    summary: 支持免登录使用 S3 和 WebDAV 同步的思源笔记版本
