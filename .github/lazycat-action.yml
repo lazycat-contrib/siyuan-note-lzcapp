@@ -24,7 +24,8 @@ images:
     channel: stable
     tag_regex: '^v?[0-9]+\.[0-9]+\.[0-9]+$'
     delivery:
-      mode: direct
+      mode: mirror
+      image_template: docker.1ms.run/czyt/siyuan:{tag}
 
 stores:
   official:
