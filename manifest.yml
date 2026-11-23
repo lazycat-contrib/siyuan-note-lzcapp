@@ -8,8 +8,8 @@ application:
       backend: http://siyuan-note-server:6806/
 services:
   siyuan-note-server:
-    # upstream: czyt/siyuan:v3.8.10
-    image: docker.1ms.run/czyt/siyuan:v3.8.10
+    # upstream: czyt/siyuan:v3.8.11
+    image: docker.1ms.run/czyt/siyuan:v3.8.11
     environment:
       - LANG=zh_CN.UTF-8
       - TZ={{.U.siyuan_server_time_zone}}
